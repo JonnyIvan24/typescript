@@ -17,6 +17,7 @@ let nulos = null;
 function imprimirEnConsola(mensaje) {
     console.log(mensaje);
 }
+// también tenemos la palabra undefined para saber si una propiedad esta definida
 // let b: object = {id: 2}
 // if (b.nombre === undefined) {
 //     b = {id: b.id, nombre: ''}
