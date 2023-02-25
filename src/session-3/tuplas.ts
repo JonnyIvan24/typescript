@@ -13,7 +13,7 @@ console.log(tupla1[1])
 
 // let tuplaString = tupla1[0]
 // let tuplaBoolean = tupla1[1]
-
+// las lineas comentadas es igual a lo siguiente
 let [tuplaString, tuplaBoolean] = tupla1
 
 console.log(tuplaString)
@@ -25,6 +25,9 @@ let complexObj = {
     cBool: true
 }
 
+// para desestructurar un objeto es necesario que
+// las variables se llamen igual que las propiedades
+// no importa el orden
 let { bStr, cBool, aNum } = complexObj
 
 console.log(aNum)
