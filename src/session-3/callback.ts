@@ -1,8 +1,11 @@
-var myCallback = (text) => {
+let myCallback = (text: string) => {
     console.log('myCallback called with ' + text)
 }
 
-function withCallbackArg(message, callbackfn) {
+// el tipado de las funciones ignora el nombre de los
+// parámetros pero no la cantidad o el tipo de valor
+// de los mismos
+function withCallbackArg(message: string, callbackfn: (text: string) => void) {
     console.log('withCallback called, message ' + message)
     callbackfn(message + ' from withCallback')
 }
@@ -11,4 +14,4 @@ function withCallbackArg(message, callbackfn) {
 // no da error
 console.log(withCallbackArg('initial text', myCallback))
 // da error por que espera que sea una función
-console.log(withCallbackArg('initial text', 'myCallback'))
+// console.log(withCallbackArg('initial text', 'myCallback'))
