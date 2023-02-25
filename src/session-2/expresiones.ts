@@ -17,3 +17,11 @@ function myString(a: any): string {
     // .... más código
     return 'El valor es mayor que 10'
 }
+
+function nullishCheck(a: number | null | undefined) {
+    console.log('a = ' + (a ?? 'es nulo o indefinido'))
+}
+
+nullishCheck(1)
+nullishCheck(null)
+nullishCheck(undefined)
