@@ -25,3 +25,13 @@ let myClassWithPrivateP = new ClassWithPrivateProperty(10);
 // myClassWithPrivateP.id = 20
 // pero utilizar métodos públicos para acceder a ellos
 myClassWithPrivateP.print();
+class ClassMods {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+let myClassMods = new ClassMods(2, 'Juan');
+console.log(`myClassMods.id = ${myClassMods.id}`);
+// lo siguiente nos da error ya que name es privado
+// console.log(`myClassMods.name = ${myClassMods.name}`)
