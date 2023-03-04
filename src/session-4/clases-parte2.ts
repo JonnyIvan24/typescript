@@ -46,3 +46,40 @@ let myClassMods = new ClassMods(2, 'Juan')
 console.log(`myClassMods.id = ${myClassMods.id}`)
 // lo siguiente nos da error ya que name es privado
 // console.log(`myClassMods.name = ${myClassMods.name}`)
+
+class ClassReadonly {
+    readonly name: string;
+    constructor(name: string) {
+        this.name = name
+    }
+
+    setName(name: string) {
+        // no podemos modificar propiedades de encapsulado readonly
+        // this.name = name
+    }
+}
+
+let myClassReadonly = new ClassReadonly('Juan')
+
+// no podemos modificar propiedades de encapsulado readonly
+// myClassReadonly.name = 'Iván'
+
+console.log(myClassReadonly.name)
+
+class ClassWithAccesors {
+    private _id: number = 10
+    
+    get id() : number {
+        return this._id
+    }
+    
+    set id(value : number) {
+        this._id = value;
+    }    
+}
+
+let myClasswithAccesors = new ClassWithAccesors()
+
+console.log(myClasswithAccesors.id)
+myClasswithAccesors.id = 100
+console.log(myClasswithAccesors.id)
