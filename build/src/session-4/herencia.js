@@ -58,6 +58,7 @@ class DerivedFormClassWithCtor extends ClassWithCtor {
         this.lastname = 'Pérez';
     }
     print(text) {
+        super.print(text);
         console.log(`DerivedFormClassWithCtor.print() : ${text}`);
         // return true
     }
