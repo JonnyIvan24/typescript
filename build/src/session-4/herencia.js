@@ -35,3 +35,35 @@ let myClass = {
     name: 'Juan',
     print: () => { }
 };
+// ---------- palabra super -----------
+class ClassWithCtor {
+    constructor(id) {
+        this._id = id;
+        this.lastname = 'Uribe';
+    }
+    // la implementaciónde los getters y setters
+    // se hace en la clase donde se definio
+    // la propiedad privada
+    get id() {
+        return this._id;
+    }
+    print(text) {
+        console.log(`ClassWithCtor.print() : ${text}`);
+    }
+}
+class DerivedFormClassWithCtor extends ClassWithCtor {
+    constructor(id, name) {
+        super(id);
+        this.name = name;
+        this.lastname = 'Pérez';
+    }
+    print(text) {
+        console.log(`DerivedFormClassWithCtor.print() : ${text}`);
+        // return true
+    }
+}
+let myClassD = new DerivedFormClassWithCtor(1, 'Juan');
+myClassD.print('hola');
+// nos da error por que no podemos acceder a ella
+// solamente dentro de la clase base o derivada
+// myClassD.lastname
